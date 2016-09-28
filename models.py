@@ -25,7 +25,7 @@ class res_partner(models.Model):
 	@api.one
 	@api.constrains('email')
 	def _check_partner_email(self):
-		if not self.email:
+		if not self.email and not self.is_company:
 		        raise ValidationError("Email is mandatory in partners")
 
 
