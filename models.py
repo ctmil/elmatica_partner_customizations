@@ -15,3 +15,17 @@ class res_partner(models.Model):
 	_inherit = 'res.partner'
 
 	@api.one
+	@api.constrains('function')
+	def _check_partner_function(self):
+		if not self.is_company and (self.customer or self.supplier):
+			if not self.function:
+			        raise ValidationError("Function is mandatory in contacts")
+
+
+	@api.one
+	@api.constrains('email')
+	def _check_partner_function(self):
+		if not self.function:
+		        raise ValidationError("Email is mandatory in partners")
+
+
