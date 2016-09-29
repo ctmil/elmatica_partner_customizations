@@ -34,8 +34,7 @@
             <field name="view_mode">tree,form</field>
             <field name="domain">[('supplier','=',True),('is_company','=',False)]</field>
             <field name="view_id">elmatica_contact_tree</field>
-            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
-            <field name="help">We haven't sent you any invoice.</field>
+            <!-- field name="search_view_id" ref="account.view_account_invoice_filter"/ -->
         </record>
 
 
