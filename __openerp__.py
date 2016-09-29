@@ -2,7 +2,7 @@
     'name': 'Elmatica - Partner Customization',
     'category': 'Sales',
     'version': '0.1',
-    'depends': ['base','product'],
+    'depends': ['base','product','elmatica_partner'],
     'data': [
 	'partner_view.xml'
     ],
