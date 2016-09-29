@@ -19,6 +19,7 @@
             <field name="sequence">10</field>
             <field name="arch" type="xml">
                 <tree string="Contacts" >
+                    <field name="company_id" />
                     <field name="parent_id" />
                     <field name="name" />
                     <field name="partner_person_level" />
