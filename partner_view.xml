@@ -13,5 +13,36 @@
             </field>
         </record>
 
+        <record id="elmatica_contact_tree" model="ir.ui.view">
+            <field name="name">elmatica.contact.tree</field>
+            <field name="model">res.partner</field>
+            <field name="sequence">10</field>
+            <field name="arch" type="xml">
+                <tree string="Contacts" >
+                    <field name="parent_id" />
+                    <field name="name" />
+                    <field name="partner_person_level" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="action_contact_view" model="ir.actions.act_window">
+            <field name="name">Contact View</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('supplier','=',True),('is_company','=',False)]</field>
+            <field name="view_id">elmatica_contact_tree</field>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="help">We haven't sent you any invoice.</field>
+        </record>
+
+
+
+        <menuitem name="Contacts View" id="elmatica_contact_view" parent="base.menu_sales"
+            action="action_contact_view" sequence="50"/>
+
+
      </data>
 </openerp>
