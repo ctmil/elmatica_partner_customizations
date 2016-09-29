@@ -4,6 +4,7 @@
     'version': '0.1',
     'depends': ['base','product'],
     'data': [
+	'partner_view.xml'
     ],
     'demo': [
     ],
