@@ -45,5 +45,18 @@
             action="action_contact_view" sequence="50"/>
 
 
+        <record id="view_partner_property_form" model="ir.ui.view">
+           <field name="name">res.partner.property.form.inherit.elmatica_partner_customizations</field>
+           <field name="model">res.partner</field>
+           <field name="priority">2</field>
+           <field name="inherit_id" ref="elmatica_partner.view_partner_property_form"/>
+           <field name="arch" type="xml">
+		<xpath expr="//notebook/page[@name='sales_purchases']/group/group/field[@name='partner_approved']" position="attributes">
+                       <attribute name="invisible">1</attribute>
+               </xpath>
+	   </field>
+	</record>
+
+
      </data>
 </openerp>
